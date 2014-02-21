@@ -144,12 +144,12 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
-      <version>1.6.1</version>
+      <version>${slf4j.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>1.6.1</version>
+      <version>${slf4j.version}</version>
     </dependency>
     
     		<dependency>
@@ -219,7 +219,20 @@
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-codeserver</artifactId>
             <version>${gwtVersion}</version>
-          </dependency>
+          </dependency>   
+          <!-- Adding logging to avoid classloading issues -->
+           <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+          
+          
         </dependencies>
         <!-- JS is only needed in the package phase, this speeds up testing -->
         <executions>
