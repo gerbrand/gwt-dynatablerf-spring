@@ -187,7 +187,7 @@ public class SummaryWidget extends Composite {
     PersonProxy person = context.edit(context.create(PersonProxy.class));
     person.setAddress(address);
     person.setClassSchedule(schedule);
-    context.persist().using(person);
+    context.persist(person);
     eventBus.fireEvent(new EditPersonEvent(person, context));
   }
 

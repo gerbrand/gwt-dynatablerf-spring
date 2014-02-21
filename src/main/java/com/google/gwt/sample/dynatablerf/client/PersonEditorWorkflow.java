@@ -194,7 +194,7 @@ public class PersonEditorWorkflow {
         // Display the UI
         edit(context);
         // Configure the method invocation to be sent in the context
-        context.persist().using(person);
+        context.persist(person);
         // The context will be fire()'ed from the onSave() method
       }
     }).fire();

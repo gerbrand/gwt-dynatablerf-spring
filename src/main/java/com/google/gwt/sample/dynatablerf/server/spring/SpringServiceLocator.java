@@ -10,7 +10,7 @@ import com.google.web.bindery.requestfactory.shared.ServiceLocator;
 /**
  * GWT Locator to find Spring-beans.
  * 
- * @author dbxgdi
+ * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
  *
  */
 @Component

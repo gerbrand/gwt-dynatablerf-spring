@@ -15,20 +15,19 @@
  */
 package com.google.gwt.sample.dynatablerf.shared;
 
-import com.google.gwt.sample.dynatablerf.domain.Person;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import com.google.gwt.sample.dynatablerf.server.PersonService;
 import com.google.gwt.sample.dynatablerf.server.ScheduleService;
-import com.google.gwt.sample.dynatablerf.server.ScheduleServiceLocator;
 import com.google.gwt.sample.dynatablerf.server.SchoolCalendarService;
-import com.google.web.bindery.requestfactory.shared.InstanceRequest;
+import com.google.gwt.sample.dynatablerf.server.spring.SpringServiceLocator;
 import com.google.web.bindery.requestfactory.shared.LoggingRequest;
 import com.google.web.bindery.requestfactory.shared.Request;
 import com.google.web.bindery.requestfactory.shared.RequestContext;
 import com.google.web.bindery.requestfactory.shared.RequestFactory;
 import com.google.web.bindery.requestfactory.shared.Service;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Request factory for the DynaTable sample. Instantiate via
@@ -38,15 +37,15 @@ public interface DynaTableRequestFactory extends RequestFactory {
   /**
    * Source of request objects for the Person class.
    */
-  @Service(Person.class)
+  @Service(value=PersonService.class, locator = SpringServiceLocator.class)
   interface PersonRequest extends RequestContext {
-    InstanceRequest<PersonProxy, Void> persist();
+    Request<Void> persist(PersonProxy person);
   }
 
   /**
    * Source of request objects for the SchoolCalendarService.
    */
-  @Service(SchoolCalendarService.class)
+  @Service(value=SchoolCalendarService.class, locator = SpringServiceLocator.class)
   interface SchoolCalendarRequest extends RequestContext {
     List<Boolean> ALL_DAYS = Collections.unmodifiableList(Arrays.asList(true,
         true, true, true, true, true, true));
@@ -62,7 +61,7 @@ public interface DynaTableRequestFactory extends RequestFactory {
   /**
    * Source of request objects for Schedule entities.
    */
-  @Service(value = ScheduleService.class, locator = ScheduleServiceLocator.class)
+  @Service(value = ScheduleService.class, locator = SpringServiceLocator.class)
   interface ScheduleRequest extends RequestContext {
     Request<TimeSlotProxy> createTimeSlot(int zeroBasedDayOfWeek, int startMinutes,
         int endMinutes);

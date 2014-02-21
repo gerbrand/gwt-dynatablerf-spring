@@ -22,7 +22,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 /**
  * Spring configuration for JPA 
- * @author dbxgdi
+ * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
  *
  */
 @Configuration
