@@ -16,6 +16,8 @@
 package com.google.gwt.sample.dynatablerf.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -31,7 +33,9 @@ public class Address {
   private String city;
 
   // May be null if Address is newly-created
-  private String id;
+  @Id
+  @GeneratedValue
+  private Long id;
 
   @NotNull
   @Size(min = 1)

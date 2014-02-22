@@ -15,11 +15,16 @@
  */
 package com.google.gwt.sample.dynatablerf.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Holds the relevant data for a Schedule entity.
@@ -29,12 +34,16 @@ import javax.persistence.Entity;
  * those responsibilities instead.
  */
 @Entity
-public class Schedule {
+public class Schedule implements Serializable {
+	private static final long serialVersionUID = -1058962925354763216L;
 
+	@ElementCollection
   private List<TimeSlot> timeSlots = new ArrayList<TimeSlot>();
   
+	@Id
   private Integer key;
   
+	@Id
   private Integer revision;
 
   public Schedule() {

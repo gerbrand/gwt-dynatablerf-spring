@@ -3,8 +3,6 @@ package com.google.gwt.sample.dynatablerf.server.spring;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-import liquibase.integration.spring.SpringLiquibase;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,9 +54,8 @@ public class PersistenceJPAConfig
 
     @Bean
     @Autowired
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource, SpringLiquibase springLiquibase) {
-    	LOG.info("Liquibase was initialized using {}. We can now create entity-manager.",springLiquibase.getChangeLog());
-    	LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
+     	LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 		entityManagerFactoryBean.setDataSource(dataSource);
 		JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		entityManagerFactoryBean.setJpaVendorAdapter(vendorAdapter);		

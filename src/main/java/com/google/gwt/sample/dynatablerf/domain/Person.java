@@ -17,10 +17,14 @@ package com.google.gwt.sample.dynatablerf.domain;
 
 import static com.google.gwt.sample.dynatablerf.shared.DynaTableRequestFactory.SchoolCalendarRequest.ALL_DAYS;
 
-
 import java.util.List;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -32,14 +36,17 @@ import javax.validation.constraints.Size;
 public class Person {
 
   @NotNull
+  @OneToOne
   private Address address = new Address();
 
   @NotNull
+  @OneToOne
   private Schedule classSchedule = new Schedule();
 
   @NotNull
   private String description = "DESC";
 
+  @OneToOne
   private Person mentor;
 
   @NotNull
@@ -47,6 +54,9 @@ public class Person {
   private String name;
 
   // May be null if the person is newly-created
+  
+  @GeneratedValue
+  @Id
   private Long id;
 
   @NotNull
@@ -55,6 +65,7 @@ public class Person {
 
   private String note;
 
+  @ElementCollection
   private List<Boolean> daysFilters = ALL_DAYS;
 
   public Person() {

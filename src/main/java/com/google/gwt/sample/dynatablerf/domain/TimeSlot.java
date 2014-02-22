@@ -15,22 +15,32 @@
  */
 package com.google.gwt.sample.dynatablerf.domain;
 
+import java.io.Serializable;
+
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  * Hold relevant data for a time slot.
  */
 @Entity
-public class TimeSlot implements Comparable<TimeSlot> {
+@Embeddable
+public class TimeSlot implements Comparable<TimeSlot>,Serializable {
 
-  private static final transient String[] DAYS = new String[] {
+	private static final long serialVersionUID = 794887227959115674L;
+
+private static final transient String[] DAYS = new String[] {
       "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"};
 
-  private int endMinutes;
+  @Id
+  private Integer endMinutes;
 
-  private int startMinutes;
+  @Id
+  private Integer startMinutes;
 
-  private int zeroBasedDayOfWeek;
+  @Id
+  private Integer zeroBasedDayOfWeek;
 
   public TimeSlot() {
   }
