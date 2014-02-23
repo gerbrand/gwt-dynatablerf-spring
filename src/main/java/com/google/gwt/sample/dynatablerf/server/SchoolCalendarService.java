@@ -19,7 +19,7 @@ public class SchoolCalendarService {
 	EntityManager entityManager;
 	
 	public List<Person> getPeople(int startIndex, int maxCount, List<Boolean> dayFilter) {
-		TypedQuery<Person> q = entityManager.createQuery("SELECT p FROM Person p WHERE ORDER BY p.name", Person.class);
+		TypedQuery<Person> q = entityManager.createQuery("SELECT p FROM Person p ORDER BY p.name", Person.class);
 		q.setFirstResult(startIndex);
 		q.setMaxResults(maxCount);
 		return q.getResultList();
