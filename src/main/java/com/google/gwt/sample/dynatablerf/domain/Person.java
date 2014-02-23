@@ -19,7 +19,7 @@ import static com.google.gwt.sample.dynatablerf.shared.DynaTableRequestFactory.S
 
 import java.util.List;
 
-import javax.persistence.CollectionTable;
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,17 +36,17 @@ import javax.validation.constraints.Size;
 public class Person {
 
   @NotNull
-  @OneToOne
+  @OneToOne(cascade=CascadeType.ALL)
   private Address address = new Address();
 
   @NotNull
-  @OneToOne
+  @OneToOne(cascade= {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.DETACH})
   private Schedule classSchedule = new Schedule();
 
   @NotNull
   private String description = "DESC";
 
-  @OneToOne
+  @OneToOne(cascade= {CascadeType.MERGE,CascadeType.PERSIST,CascadeType.DETACH})
   private Person mentor;
 
   @NotNull

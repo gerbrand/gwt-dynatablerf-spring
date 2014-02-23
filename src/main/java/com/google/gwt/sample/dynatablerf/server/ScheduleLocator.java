@@ -19,7 +19,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gwt.sample.dynatablerf.domain.Schedule;
-import com.google.web.bindery.requestfactory.shared.Locator;
 
 /**
  * This class serves as an example of implementing a Locator to allow
@@ -33,14 +32,14 @@ import com.google.web.bindery.requestfactory.shared.Locator;
  */
 @Component
 @Transactional
-public class ScheduleLocator extends JpaEntityLocator<Schedule, Integer> {
+public class ScheduleLocator extends JpaEntityLocator<Schedule, Long> {
 
 	public ScheduleLocator() {
-		super(Schedule.class, Integer.class);
+		super(Schedule.class, Long.class);
 	}
 
 	@Override
-	public Integer getId(Schedule entity) {
+	public Long getId(Schedule entity) {
 		return entity.getKey();
 	}
 

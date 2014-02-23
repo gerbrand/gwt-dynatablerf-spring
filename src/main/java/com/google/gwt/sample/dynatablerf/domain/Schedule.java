@@ -20,11 +20,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  * Holds the relevant data for a Schedule entity.
@@ -41,10 +40,10 @@ public class Schedule implements Serializable {
   private List<TimeSlot> timeSlots = new ArrayList<TimeSlot>();
   
 	@Id
-  private Integer key;
-  
-	@Id
-  private Integer revision;
+	@GeneratedValue
+  private Long key;
+ 
+  private Integer revision = 0;
 
   public Schedule() {
   }
@@ -74,20 +73,12 @@ public class Schedule implements Serializable {
     }
   }
 
-  public Integer getKey() {
-    return key;
-  }
-
   public Integer getRevision() {
     return revision;
   }
 
   public List<TimeSlot> getTimeSlots() {
     return timeSlots;
-  }
-
-  public void setKey(Integer key) {
-    this.key = key;
   }
 
   public void setRevision(Integer revision) {
@@ -102,5 +93,9 @@ public class Schedule implements Serializable {
   public String toString() {
     return getDescription(null);
   }
+
+public Long getKey() {
+	return key;
+}
 
 }
