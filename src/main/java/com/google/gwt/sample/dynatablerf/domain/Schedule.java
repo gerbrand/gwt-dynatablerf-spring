@@ -20,10 +20,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Holds the relevant data for a Schedule entity.
@@ -37,6 +39,7 @@ public class Schedule implements Serializable {
 	private static final long serialVersionUID = -1058962925354763216L;
 
 	@ElementCollection
+	@OneToMany(cascade=CascadeType.ALL)
   private List<TimeSlot> timeSlots = new ArrayList<TimeSlot>();
   
 	@Id
