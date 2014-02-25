@@ -32,6 +32,8 @@ import com.google.web.bindery.requestfactory.shared.Service;
 /**
  * Request factory for the DynaTable sample. Instantiate via
  * {@link com.google.gwt.core.client.GWT#create}.
+ * 
+ * Services are made available via Spring. See {@link SpringRequestFactoryServlet}
  */
 public interface DynaTableRequestFactory extends RequestFactory {
   /**

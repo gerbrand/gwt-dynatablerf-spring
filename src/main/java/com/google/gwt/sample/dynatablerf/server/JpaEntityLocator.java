@@ -5,6 +5,21 @@ import javax.persistence.PersistenceContext;
 
 import com.google.web.bindery.requestfactory.shared.Locator;
 
+/**
+ * <p>Implementation of GWT-Locator that for looking up entities
+ * via JPA. The locator is used to lookup the server-side objects/entities that back
+ * the Proxy objects used at the client. This way, GWT makes synchronizing client-side
+ * data with server-side data easier, while still making the difference between
+ * client-side and server-side object explicit.</p>
+ * <p>Since a Locator needs access to the class, you'll need to subclass
+ * this class for each non-valueproxy.</p>
+ * Example: {@link PersonProxy} is annotated to use {@link PersonLocator} to lookup
+ * the server-side objects.
+ * @author gerbrand
+ *
+ * @param <T>
+ * @param <I>
+ */
 public abstract class JpaEntityLocator<T, I> extends Locator<T, I> {
 
 	@PersistenceContext

@@ -11,6 +11,12 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+/**
+ * Defines the DataSource. You might want to replace the Driverbased Datasource
+ * with J2EE lookup depending on your situation.
+ * @author gerbrand
+ *
+ */
 @Configuration
 @PropertySource("classpath:application.properties")
 public class DataSourceConfig {

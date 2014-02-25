@@ -17,7 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 /**
- * Spring configuration for JPA 
+ * Spring configuration for JPA. Most notabily. a TransactionManager
+ * is defined so we can use Spring Transactions.
  * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
  *
  */

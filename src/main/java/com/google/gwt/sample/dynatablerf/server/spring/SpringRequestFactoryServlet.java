@@ -14,6 +14,12 @@ import com.google.web.bindery.requestfactory.shared.Locator;
 import com.google.web.bindery.requestfactory.shared.ServerFailure;
 import com.google.web.bindery.requestfactory.shared.ServiceLocator;
 
+/**
+ * The RequestFactory is extended so GWT service clases
+ * so Locator objects are looked up via Spring.
+ * @author gerbrand
+ *
+ */
 public class SpringRequestFactoryServlet extends RequestFactoryServlet {
 	private static final Logger LOG = LoggerFactory.getLogger(SpringRequestFactoryServlet.class);
 	private static final long serialVersionUID = -2734812368731072628L;
