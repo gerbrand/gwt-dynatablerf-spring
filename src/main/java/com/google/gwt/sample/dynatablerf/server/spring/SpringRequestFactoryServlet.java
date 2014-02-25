@@ -28,7 +28,8 @@ public class SpringRequestFactoryServlet extends RequestFactoryServlet {
 	
 	public SpringRequestFactoryServlet() {
 		super(new ExceptionHandler(){
-
+			//Because uncachted Exceptions we're swallowed by the container
+			//I've added this extra ExceptionHandler to log any uncatched Exceptions.
 			@Override
 			public ServerFailure createServerFailure(Throwable throwable) {
 				LOG.error("Exception while handling request.",throwable);
@@ -36,7 +37,10 @@ public class SpringRequestFactoryServlet extends RequestFactoryServlet {
 				        "Server Error: " + (throwable == null ? null : throwable.getMessage()), null, null , true);
 			}
 
-			},new ServiceLayerDecorator(){
+			},
+			//An non-static internal class has to be used, because the applicationContext is available only after the
+			//init method of the Servlet that contains this class is called.
+			new ServiceLayerDecorator(){
 				  @Override
 				  public <T extends Locator<?, ?>> T createLocator(Class<T> clazz) {
 					  return applicationContext.getBean(clazz);
