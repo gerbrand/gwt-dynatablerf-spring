@@ -11,6 +11,15 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gwt.sample.dynatablerf.domain.Person;
 
+/**
+ * Service for the schoolCalender.
+ * This class is called initialy to show all people.
+ * 
+ * Just as the {@link ScheduleService} this class is made available
+ * via Spring.
+ *
+ * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
+ */
 @Component
 @Transactional
 public class SchoolCalendarService {

@@ -5,6 +5,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gwt.sample.dynatablerf.domain.Person;
 
+/**
+ * Concrete locator for Persons.
+ * 
+ * The class is made available as Component via Spring. 
+ * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
+ *
+ */
 @Component
 @Transactional
 public class PersonLocator extends JpaEntityLocator<Person, Long> {

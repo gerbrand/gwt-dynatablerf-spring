@@ -22,8 +22,11 @@ import com.google.gwt.sample.dynatablerf.domain.TimeSlot;
 
 /**
  * Service object for Schedule entities, used to demonstrate the use of non-static
- * service objects with RequestFactory. RequestFactory finds this service via the
- * {@link ScheduleServiceLocator}.
+ * service objects with RequestFactory. Unlike the original version of the
+ * DynaTableRf, no ScheduleServiceLocator is needed. The Service class only
+ * has to be made available via Spring.
+ *
+ * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
  */
 @Component
 @Transactional
