@@ -15,8 +15,14 @@ import com.google.web.bindery.requestfactory.shared.ServerFailure;
 import com.google.web.bindery.requestfactory.shared.ServiceLocator;
 
 /**
- * The RequestFactory is extended so GWT service clases
- * so Locator objects are looked up via Spring.
+ * The RequestFactory is extended: using an ServiceLayerDecorator
+ * GWT's Locator classes and Service classes are looked up via Spring.
+ * 
+ * The {@link DynaTableRequestFactory} produces the interfaces the client
+ * can use. Each interface has an @Service annotation that defines
+ * the spring bean that contains the server-side logic of the interface.
+ * 
+ * 
  * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
  *
  */
