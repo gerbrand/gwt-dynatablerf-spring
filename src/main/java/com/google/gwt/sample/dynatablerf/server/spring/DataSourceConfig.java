@@ -14,7 +14,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 /**
  * Defines the DataSource. You might want to replace the Driverbased Datasource
  * with J2EE lookup depending on your situation.
- * @author gerbrand
+ * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
  *
  */
 @Configuration

@@ -15,7 +15,7 @@ import com.google.web.bindery.requestfactory.shared.Locator;
  * this class for each non-valueproxy.</p>
  * Example: {@link PersonProxy} is annotated to use {@link PersonLocator} to lookup
  * the server-side objects.
- * @author gerbrand
+ * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
  *
  * @param <T>
  * @param <I>

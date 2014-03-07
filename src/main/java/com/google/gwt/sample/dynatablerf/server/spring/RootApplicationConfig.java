@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * Java based Spring Application context.
  * The java version of the applicationContext.xml. Because beans are marked
  * as Spring beans using an annotation, this class can be kept quite simple.
- * @author gerbrand
+ * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
  *
  */
 @Configuration

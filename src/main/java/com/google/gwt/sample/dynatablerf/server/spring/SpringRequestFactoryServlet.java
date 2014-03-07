@@ -17,7 +17,7 @@ import com.google.web.bindery.requestfactory.shared.ServiceLocator;
 /**
  * The RequestFactory is extended so GWT service clases
  * so Locator objects are looked up via Spring.
- * @author gerbrand
+ * @author Gerbrand van Dieijen <gerbrand@vandieijen.nl>
  *
  */
 public class SpringRequestFactoryServlet extends RequestFactoryServlet {
