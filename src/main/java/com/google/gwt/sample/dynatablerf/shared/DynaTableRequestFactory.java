@@ -22,7 +22,7 @@ import java.util.List;
 import com.google.gwt.sample.dynatablerf.server.PersonService;
 import com.google.gwt.sample.dynatablerf.server.ScheduleService;
 import com.google.gwt.sample.dynatablerf.server.SchoolCalendarService;
-import com.google.gwt.sample.dynatablerf.server.spring.SpringServiceLocator;
+import com.google.gwt.sample.dynatablerf.spring.SpringServiceLocator;
 import com.google.web.bindery.requestfactory.shared.LoggingRequest;
 import com.google.web.bindery.requestfactory.shared.Request;
 import com.google.web.bindery.requestfactory.shared.RequestContext;

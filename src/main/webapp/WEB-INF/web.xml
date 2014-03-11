@@ -15,7 +15,7 @@
     
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>com.google.gwt.sample.dynatablerf.server.spring.RootApplicationConfig</param-value>
+        <param-value>com.google.gwt.sample.dynatablerf.spring.config.RootApplicationConfig</param-value>
     </context-param>
 
 	<listener>
@@ -36,7 +36,7 @@
 	
   <servlet>
     <servlet-name>springRequestFactoryServlet</servlet-name>
-    <servlet-class>com.google.gwt.sample.dynatablerf.server.spring.SpringRequestFactoryServlet</servlet-class>
+    <servlet-class>com.google.gwt.sample.dynatablerf.spring.SpringRequestFactoryServlet</servlet-class>
     <init-param>
       <param-name>symbolMapsDirectory</param-name>
       <!-- You'll need to compile with -extras and move the symbolMaps directory

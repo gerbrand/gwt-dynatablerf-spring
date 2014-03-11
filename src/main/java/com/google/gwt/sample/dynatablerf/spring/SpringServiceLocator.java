@@ -1,4 +1,4 @@
-package com.google.gwt.sample.dynatablerf.server.spring;
+package com.google.gwt.sample.dynatablerf.spring;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

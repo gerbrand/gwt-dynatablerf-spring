@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.google.gwt.sample.dynatablerf.domain.Person;
 import com.google.gwt.sample.dynatablerf.domain.TimeSlot;
-import com.google.gwt.sample.dynatablerf.server.spring.RootApplicationConfig;
+import com.google.gwt.sample.dynatablerf.spring.config.RootApplicationConfig;
 import com.google.gwt.thirdparty.guava.common.base.Predicate;
 import com.google.gwt.thirdparty.guava.common.collect.Iterables;
 

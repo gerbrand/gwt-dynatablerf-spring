@@ -1,4 +1,4 @@
-package com.google.gwt.sample.dynatablerf.server.spring;
+package com.google.gwt.sample.dynatablerf.spring.config;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;

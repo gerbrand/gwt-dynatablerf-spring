@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.google.gwt.sample.dynatablerf.domain.Person;
-import com.google.gwt.sample.dynatablerf.server.spring.RootApplicationConfig;
+import com.google.gwt.sample.dynatablerf.spring.config.RootApplicationConfig;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=RootApplicationConfig.class)
